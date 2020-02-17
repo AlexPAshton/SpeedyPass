@@ -76,6 +76,8 @@ namespace SpeedyPass.Controllers
                     this.viewModel.PasswordDataModelList,
                     PersistantModelStorageService.StorageTypes.Encoded);
             }
+
+            this.view.BindViewModel(this.viewModel);
         }
 
         private string GetBuildNumber()
@@ -117,6 +119,11 @@ namespace SpeedyPass.Controllers
             if (domain != null && domain != string.Empty)
             {
                 this.viewModel.PasswordDataModelList.RemoveAll(s => s.Domain == domain);
+
+                this.persistantModelStorageService.Save(
+                    this.applicationConfigModel.PasswordDataPath,
+                    this.viewModel.PasswordDataModelList,
+                    PersistantModelStorageService.StorageTypes.Encoded);
 
                 this.view.DataContext = null;
                 this.view.DataContext = this.viewModel;

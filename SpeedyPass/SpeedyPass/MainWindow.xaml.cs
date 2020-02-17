@@ -40,7 +40,11 @@ namespace SpeedyPass
 
         public void BindViewModel(MainWindowViewModel viewModel)
         {
-            this.DataContext = viewModel;
+            Dispatcher.Invoke(() =>
+            {
+                this.DataContext = null;
+                this.DataContext = viewModel;
+            });
         }
 
         private void NotifyIcon_Click(object sender, EventArgs e)

@@ -28,3 +28,4 @@ D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.Prope
 D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.csproj.GenerateResource.cache
 D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.exe
 D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.pdb
+D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\App.baml

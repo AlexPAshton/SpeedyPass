@@ -57,9 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controllers\FileChangeWatcherService.cs" />
+    <Compile Include="Services\FileChangeWatcherService.cs" />
     <Compile Include="Controllers\MainWindowController.cs" />
-    <Compile Include="Controllers\PersistantLoggingService.cs" />
+    <Compile Include="Services\PersistantLoggingService.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Models\ApplicationLoadedConfig.cs" />
     <Compile Include="PasswordDataModel.cs" />

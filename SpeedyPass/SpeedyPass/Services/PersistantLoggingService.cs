@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace SpeedyPass.Controllers
+namespace SpeedyPass.Services
 {
     public class PersistantLoggingService
     {

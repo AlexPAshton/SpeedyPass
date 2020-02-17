@@ -1,0 +1,15 @@
+D:\Play Area\SpeedyPass\SpeedyPass\bin\Debug\SpeedyPass.exe.config
+D:\Play Area\SpeedyPass\SpeedyPass\bin\Debug\SpeedyPass.exe
+D:\Play Area\SpeedyPass\SpeedyPass\bin\Debug\SpeedyPass.pdb
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\MainWindow.g.cs
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\ViewAddPassword.g.cs
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\App.g.cs
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass_MarkupCompile.cache
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass_MarkupCompile.lref
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\MainWindow.baml
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\ViewAddPassword.baml
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.g.resources
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.Properties.Resources.resources
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.csproj.GenerateResource.cache
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.exe
+D:\Play Area\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.pdb

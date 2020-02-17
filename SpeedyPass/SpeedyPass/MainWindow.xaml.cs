@@ -1,4 +1,8 @@
-﻿using System;
+﻿using SpeedyPass.Controllers;
+using SpeedyPass.Models;
+using SpeedyPass.Services;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -10,33 +14,33 @@ namespace SpeedyPass
 {
     public partial class MainWindow : Window
     {
-        private MainWindowViewModel mainWindowViewModel;
+        private MainWindowController controller;
         private NotifyIcon notifyIcon;
-        private PasswordDataService passwordDataService;
 
         public MainWindow()
         {
             this.InitializeComponent();
 
-            this.mainWindowViewModel = new MainWindowViewModel();
-            this.DataContext = this.mainWindowViewModel;
+            this.ConfigureNotifyIcon();
+        }
 
+        public void BindController(MainWindowController controller)
+        {
+            this.controller = controller;
+        }
+
+        private void ConfigureNotifyIcon()
+        {
             this.notifyIcon = new NotifyIcon();
-            this.passwordDataService = new PasswordDataService();
-
             this.notifyIcon.Click += NotifyIcon_Click;
             this.notifyIcon.Icon = new Icon(@"./keyicon.ico");
             this.notifyIcon.Text = "SpeedyPass";
             this.notifyIcon.Visible = true;
-
-
-            this.mainWindowViewModel.VersionString = this.GetBuildNumber();
-            this.mainWindowViewModel.PasswordDataModelList = this.passwordDataService.passwordDataModelList.Value;
         }
 
-        private string GetBuildNumber()
+        public void BindViewModel(MainWindowViewModel viewModel)
         {
-            return File.GetCreationTime("./SpeedyPass.exe").ToString("ddMMyyyy.HHmmss");
+            this.DataContext = viewModel;
         }
 
         private void NotifyIcon_Click(object sender, EventArgs e)
@@ -89,35 +93,20 @@ namespace SpeedyPass
 
         private void AddLabel_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            ViewAddPassword viewAddPassword = new ViewAddPassword();
-            viewAddPassword.ShowDialog();
-
-            PasswordDataModel passwordDataModel = viewAddPassword.Result;
-
-            if (passwordDataModel.Domain != null)
-            {
-                this.mainWindowViewModel.PasswordDataModelList.Add(passwordDataModel);
-                this.passwordDataService.Save(this.mainWindowViewModel.PasswordDataModelList);
-
-                this.DataContext = null;
-                this.DataContext = this.mainWindowViewModel;
-            }
+            this.controller.ShowAddPasswordDataDialog();
         }
 
         private void ListBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if ((sender as System.Windows.Controls.ListBox).SelectedItem != null)
             {
-                this.mainWindowViewModel.PasswordDataModelList.RemoveAll(s => s.Domain == ((sender as System.Windows.Controls.ListBox).SelectedItem as PasswordDataModel).Domain);
-
-                this.DataContext = null;
-                this.DataContext = this.mainWindowViewModel;
+                this.controller.DeletePasswordData(((sender as System.Windows.Controls.ListBox).SelectedItem as PasswordDataModel).Domain);
             }
         }
 
         private void ReloadLabel_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            this.mainWindowViewModel.PasswordDataModelList = this.passwordDataService.Load();
+            this.controller.LoadDynamicApplicationConfig();
         }
     }
 }

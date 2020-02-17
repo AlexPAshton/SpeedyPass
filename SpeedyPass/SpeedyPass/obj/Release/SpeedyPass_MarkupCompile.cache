@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\
+D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Release\
 SpeedyPass
 none
 false
-DEBUG;TRACE
+TRACE
 D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\App.xaml
 21442500356
 
@@ -16,5 +16,5 @@ D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\App.xaml
 151397803362
 MainWindow.xaml;ViewAddPassword.xaml;
 
-False
+True
 

@@ -57,10 +57,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers\FileChangeWatcherService.cs" />
+    <Compile Include="Controllers\MainWindowController.cs" />
+    <Compile Include="Controllers\PersistantLoggingService.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Models\ApplicationLoadedConfig.cs" />
     <Compile Include="PasswordDataModel.cs" />
     <Compile Include="PasswordDataService.cs" />
+    <Compile Include="Services\PersistantModelStorageService.cs" />
     <Compile Include="ViewAddPassword.xaml.cs">
       <DependentUpon>ViewAddPassword.xaml</DependentUpon>
     </Compile>

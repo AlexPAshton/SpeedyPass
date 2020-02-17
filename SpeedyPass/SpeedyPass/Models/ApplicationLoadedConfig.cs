@@ -1,6 +1,6 @@
 ﻿namespace SpeedyPass.Models
 {
-    public class ApplicationLoadedConfig
+    public class ApplicationConfigModel
     {
         private string passwordDataPath;
 

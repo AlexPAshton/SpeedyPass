@@ -37,7 +37,6 @@
         </ListBox>
         <Label x:Name="AddLabel" Content="Add" HorizontalAlignment="Left" Margin="208,489,0,0" VerticalAlignment="Top" Foreground="#FF239D6F" MouseDown="AddLabel_MouseDown"/>
         <Label Content="{Binding VersionString}" HorizontalAlignment="Left" Margin="58,489,0,0" VerticalAlignment="Top" Foreground="#FF424242" Width="145" HorizontalContentAlignment="Center" Height="26"/>
-        <Label x:Name="ReloadLabel" Content="Reload" HorizontalAlignment="Left" Margin="10,489,0,0" VerticalAlignment="Top" Foreground="#FF23899D" MouseDown="ReloadLabel_MouseDown"/>
 
     </Grid>
 </Window>

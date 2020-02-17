@@ -107,10 +107,5 @@ namespace SpeedyPass
                 this.controller.DeletePasswordData(((sender as System.Windows.Controls.ListBox).SelectedItem as PasswordDataModel).Domain);
             }
         }
-
-        private void ReloadLabel_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            this.controller.LoadDynamicApplicationConfig();
-        }
     }
 }

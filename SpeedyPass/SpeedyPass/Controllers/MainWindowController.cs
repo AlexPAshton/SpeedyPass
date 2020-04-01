@@ -8,7 +8,7 @@ namespace SpeedyPass.Controllers
 {
     public class MainWindowController
     {
-        private const string APP_DYN_CONFIG_PATH = "./config.dat";
+        private const string APP_DYN_CONFIG_PATH = "./Data/config.dat";
         private const string DEFAULT_PSWD_DATA_PATH = "./SpeedyPass.dat";
 
         private MainWindow view;
@@ -18,7 +18,7 @@ namespace SpeedyPass.Controllers
         private PersistantLoggingService persistantLoggingService;
         private FileChangeWatcherService fileChangeWatcherService;
 
-        public MainWindowController()
+        public MainWindowController(string overridePasswordDataPath = null)
         {
             this.view = new MainWindow();
             this.viewModel = new MainWindowViewModel()
@@ -29,6 +29,17 @@ namespace SpeedyPass.Controllers
             this.persistantLoggingService = new PersistantLoggingService();
             this.persistantModelStorageService = new PersistantModelStorageService();
             this.fileChangeWatcherService = new FileChangeWatcherService();
+
+            //Temporary
+            if (overridePasswordDataPath != null)
+            {
+                this.applicationConfigModel = new ApplicationConfigModel
+                {
+                    PasswordDataPath =string.Format("{0}{1}", overridePasswordDataPath, "/SpeedyPass.dat"),
+                };
+
+                this.persistantModelStorageService.Save(MainWindowController.APP_DYN_CONFIG_PATH, this.applicationConfigModel);
+            }
 
             this.LoadDynamicApplicationConfig();
             this.LoadDynamicPasswordData();
@@ -47,7 +58,7 @@ namespace SpeedyPass.Controllers
 
         public void LoadDynamicApplicationConfig()
         {
-            this.applicationConfigModel = this.persistantModelStorageService.Load<ApplicationConfigModel>(MainWindowController.APP_DYN_CONFIG_PATH);
+            this.applicationConfigModel = this.persistantModelStorageService.Load<ApplicationConfigModel>(MainWindowController.APP_DYN_CONFIG_PATH, PersistantModelStorageService.StorageTypes.Default);
 
             if (this.applicationConfigModel == null)
             {

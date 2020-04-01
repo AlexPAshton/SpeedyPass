@@ -33,7 +33,7 @@ namespace SpeedyPass
         {
             this.notifyIcon = new NotifyIcon();
             this.notifyIcon.Click += NotifyIcon_Click;
-            this.notifyIcon.Icon = new Icon(@"./keyicon.ico");
+            this.notifyIcon.Icon = new Icon(@"./Data/keyicon.ico");
             this.notifyIcon.Text = "SpeedyPass";
             this.notifyIcon.Visible = true;
         }

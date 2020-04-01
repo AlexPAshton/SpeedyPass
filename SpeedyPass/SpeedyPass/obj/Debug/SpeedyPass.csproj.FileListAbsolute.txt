@@ -29,3 +29,4 @@ D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\Views\MainWindow
 D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\Views\ViewAddPassword.g.cs
 D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\Views\MainWindow.baml
 D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\Views\ViewAddPassword.baml
+D:\Synced Repository\SpeedyPass\SpeedyPass\SpeedyPass\obj\Debug\SpeedyPass.csprojAssemblyReference.cache

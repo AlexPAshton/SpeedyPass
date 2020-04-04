@@ -7,7 +7,7 @@ namespace SpeedyPass.Views
         WindowState WindowState { get; set; }
 
         void Show();
-        void BindController(ISetupWindowController controller);
+        void BindController(ISetupViewController controller);
         void BindViewModel(ref ISetupViewModel viewModel);
         void DragMove();
         void Close();

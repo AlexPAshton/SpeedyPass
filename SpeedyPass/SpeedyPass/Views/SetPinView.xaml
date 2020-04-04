@@ -1,5 +1,5 @@
-﻿<Window x:Class="SpeedyPass.Views.SetupView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window x:Class="SpeedyPass.Views.SetPinView"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -90,16 +90,18 @@
         <Border Background="White" CornerRadius="5" Margin="1">
             <Grid>
                 <Border Background="#FF5BAFA7" CornerRadius="5 5 0 0" HorizontalAlignment="Left" Height="315" VerticalAlignment="Top" Width="469"/>
-                <Label Content="Initial Setup" Margin="60,175,60,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="55" Foreground="White" FontSize="26"/>
-                <TextBlock Margin="60,235,60,0" VerticalAlignment="Top" Height="77" Foreground="#FFDCEEF0" FontSize="16" TextWrapping="WrapWithOverflow" TextAlignment="Center"><Run Text="Just a few things before we "/><Run Text="start,"/><LineBreak/><Run Text="w"/><Run Text="here would you like to store your data?"/></TextBlock>
-                <TextBox Height="40" Margin="60,358,60,0" Text="{Binding ConfigFileSavePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" BorderThickness="0,0,0,2" FontSize="16" FontWeight="SemiBold" MaxLines="1" Style="{DynamicResource TextBoxStyle1}" Tag="{Binding ConfigFileSavePathValidity}" VerticalContentAlignment="Center"/>
+                <Label Content="Set PIN" Margin="60,175,60,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="55" Foreground="White" FontSize="26"/>
+                <TextBlock Margin="60,235,60,0" VerticalAlignment="Top" Height="77" Foreground="#FFDCEEF0" FontSize="16" TextWrapping="WrapWithOverflow" TextAlignment="Center" Text="Please enter a pin, you'll use this to quickly and securely access your passwords"/>
+                <TextBox x:Name="Input0" Height="55" Margin="126,339,293,0" Text="{Binding InputChar0, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" BorderThickness="0,0,0,2" FontSize="20" FontWeight="SemiBold" MaxLines="1" Style="{DynamicResource TextBoxStyle1}" Tag="{Binding InputChar0Validity}" VerticalContentAlignment="Center" MaxLength="1" HorizontalContentAlignment="Center" TextChanged="Input0_TextChanged"/>
                 <Border x:Name="NextButtonBackground"  CornerRadius="50" Margin="207,421,212,28" HorizontalAlignment="Center" Width="50" Style="{DynamicResource RoundedButtonStyle}" IsEnabled="{Binding ContinueButtonEnabled}" MouseDown="NextButtonBackground_MouseDown">
                     <TextBlock x:Name="NextButtonText"  Text="&gt;" TextAlignment="Center" FontSize="26" Margin="9,-1,7,9" HorizontalAlignment="Center" Width="30" Padding="0,4,0,0" Tag="Invert" VerticalAlignment="Center"/>
                 </Border>
                 <TextBlock x:Name="CloseIcon" Text="✕" TextAlignment="Center" FontSize="26" Margin="429,0,0,366" HorizontalAlignment="Center" Width="40" MouseDown="CloseIcon_MouseDown" Style="{DynamicResource TextBlockHighlightStyle}" Padding="0,2,0,0"/>
                 <TextBlock x:Name="MinimizeIcon" Text="－" TextAlignment="Center" FontSize="26" Margin="389,0,40,366" HorizontalAlignment="Center" Width="40" MouseDown="MinimizeText_MouseDown" Style="{DynamicResource TextBlockHighlightStyle}" Padding="0,12,0,0"/>
-                <TextBlock Margin="60,340,60,0" VerticalAlignment="Top" Height="18" Foreground="#FF919A9B" TextWrapping="WrapWithOverflow" Text="Data Path"/>
-                <Image HorizontalAlignment="Left" Height="100" Margin="183,56,0,0" VerticalAlignment="Top" Width="100" Source="/SpeedyPass;component/keyicon.ico" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                <Image HorizontalAlignment="Left" Height="100" Margin="183,56,0,0" VerticalAlignment="Top" Width="100" Source="/SpeedyPass;component/keypad.png" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                <TextBox x:Name="Input1" Height="55" Margin="181,339,238,0" Text="{Binding InputChar1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" BorderThickness="0,0,0,2" FontSize="20" FontWeight="SemiBold" MaxLines="1" Style="{DynamicResource TextBoxStyle1}" Tag="{Binding InputChar1Validity}" VerticalContentAlignment="Center" MaxLength="1" HorizontalContentAlignment="Center" TextChanged="Input1_TextChanged"/>
+                <TextBox x:Name="Input2" Height="55" Margin="236,339,183,0" Text="{Binding InputChar2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" BorderThickness="0,0,0,2" FontSize="20" FontWeight="SemiBold" MaxLines="1" Style="{DynamicResource TextBoxStyle1}" Tag="{Binding InputChar2Validity}" VerticalContentAlignment="Center" MaxLength="1" HorizontalContentAlignment="Center" TextChanged="Input2_TextChanged"/>
+                <TextBox x:Name="Input3" Height="55" Margin="291,339,128,0" Text="{Binding InputChar3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" BorderThickness="0,0,0,2" FontSize="20" FontWeight="SemiBold" MaxLines="1" Style="{DynamicResource TextBoxStyle1}" Tag="{Binding InputChar3Validity}" VerticalContentAlignment="Center" MaxLength="1" HorizontalContentAlignment="Center"/>
             </Grid>
         </Border>
     </Border>

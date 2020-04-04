@@ -1,6 +1,6 @@
 ﻿namespace SpeedyPass.Views
 {
-    public interface ISetupWindowController
+    public interface ISetupViewController
     {
         void VerifyInput();
         void CloseApplication();

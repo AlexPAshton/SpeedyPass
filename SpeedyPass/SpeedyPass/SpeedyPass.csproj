@@ -62,22 +62,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controllers\SetupWindowController.cs" />
+    <Compile Include="Controllers\ISetPinViewController.cs" />
+    <Compile Include="Controllers\ISettingsViewController.cs" />
+    <Compile Include="Controllers\SetPinViewController.cs" />
+    <Compile Include="Controllers\SettingsViewController.cs" />
+    <Compile Include="Controllers\SetupViewController.cs" />
     <Compile Include="ExceptionMessageBox.cs" />
-    <Compile Include="Services\ServiceStorageAppConfig_File.cs" />
+    <Compile Include="Helpers\IModelStorageHelper.cs" />
+    <Compile Include="Helpers\ModelStorageHelper.cs" />
+    <Compile Include="Services\AppConfigService.cs" />
+    <Compile Include="Services\DataEncryptionService.cs" />
     <Compile Include="Services\FileChangeWatcherService.cs" />
     <Compile Include="Controllers\MainWindowController.cs" />
-    <Compile Include="Services\IServiceStorageAppConfig.cs" />
+    <Compile Include="Services\IAppConfigService.cs" />
+    <Compile Include="Services\IDataEncryptionService.cs" />
     <Compile Include="Services\PersistantLoggingService.cs" />
+    <Compile Include="ViewModels\ISetPinViewModel.cs" />
+    <Compile Include="ViewModels\ISettingsViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Models\ApplicationLoadedConfig.cs" />
+    <Compile Include="Models\AppConfigModel.cs" />
     <Compile Include="Models\PasswordDataModel.cs" />
     <Compile Include="Services\PersistantModelStorageService.cs" />
+    <Compile Include="ViewModels\SetPinViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\SetupViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\ISetupViewModel.cs" />
-    <Compile Include="Controllers\ISetupWindowController.cs" />
+    <Compile Include="Controllers\ISetupViewController.cs" />
+    <Compile Include="Views\ISetPinView.cs" />
+    <Compile Include="Views\ISettingsView.cs" />
     <Compile Include="Views\ISetupView.cs" />
+    <Compile Include="Views\SetPinView.xaml.cs">
+      <DependentUpon>SetPinView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SetupView.xaml.cs">
       <DependentUpon>SetupView.xaml</DependentUpon>
     </Compile>
@@ -96,6 +116,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SetPinView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SetupView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +150,7 @@
     <Content Include="Data\keyicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="keypad.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

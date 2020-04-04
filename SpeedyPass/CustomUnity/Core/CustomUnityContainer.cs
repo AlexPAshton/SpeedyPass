@@ -17,7 +17,7 @@ namespace CustomUnity
         private const string EXCEPTION_FAILEDTOLOAD = "(X2) CustomUnityContainer failed to load config.";
         private const string EXCEPTION_CANNOTRESOLVETYPE = "(X2) CustomUnityContainer cannot resolve type. ";
 
-        private static List<InjectionMap> injectionMapList = new List<InjectionMap>();
+        private static List<TypeMap> injectionMapList = new List<TypeMap>();
 
         static CustomUnityContainer()
         {
@@ -68,7 +68,7 @@ namespace CustomUnity
         {
             try
             {
-                CustomUnityContainer.injectionMapList = DeserialiseFromString<List<InjectionMap>>(File.ReadAllText(CustomUnityContainer.CONFIG_PATH));
+                CustomUnityContainer.injectionMapList = DeserialiseFromString<List<TypeMap>>(File.ReadAllText(CustomUnityContainer.CONFIG_PATH));
             }
             catch
             {

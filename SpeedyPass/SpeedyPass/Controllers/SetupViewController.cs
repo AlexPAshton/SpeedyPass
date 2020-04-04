@@ -1,19 +1,26 @@
 ﻿using CustomUnity;
+using SpeedyPass.Services;
 using SpeedyPass.Views;
 using System.IO;
 using System.Windows;
 
 namespace SpeedyPass.Controllers
 {
-    public class SetupWindowController : ISetupWindowController
+    public class SetupViewController : ISetupViewController
     {
+        private const string PASSWORDDATA_PATH = "SpeedyPassDat.dat";
+
         private ISetupView view;
         private ISetupViewModel viewModel;
 
-        public SetupWindowController()
+        private IAppConfigService appConfigService;
+
+        public SetupViewController()
         {
             this.view = CustomUnityContainer.Resolve<ISetupView>();
             this.viewModel = CustomUnityContainer.Resolve<ISetupViewModel>();
+
+            this.appConfigService = CustomUnityContainer.Resolve<IAppConfigService>();
 
             this.view.BindViewModel(ref this.viewModel);
             this.view.BindController(this);
@@ -34,7 +41,12 @@ namespace SpeedyPass.Controllers
 
         public void ContinueClicked()
         {
-            new MainWindowController(this.viewModel.ConfigFileSavePath);
+            this.appConfigService.AppConfigModel.DataPath = string.Format("{0}{1}", 
+                this.viewModel.ConfigFileSavePath,
+                SetupViewController.PASSWORDDATA_PATH);
+
+            CustomUnityContainer.Resolve<ISettingsViewController>();
+
             this.view.Close();
         }
 

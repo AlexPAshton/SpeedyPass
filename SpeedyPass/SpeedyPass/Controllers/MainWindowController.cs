@@ -13,7 +13,7 @@ namespace SpeedyPass.Controllers
 
         private MainWindow view;
         private MainWindowViewModel viewModel;
-        private ApplicationConfigModel applicationConfigModel;
+        private AppConfigModel applicationConfigModel;
         private PersistantModelStorageService persistantModelStorageService;
         private PersistantLoggingService persistantLoggingService;
         private FileChangeWatcherService fileChangeWatcherService;
@@ -33,9 +33,9 @@ namespace SpeedyPass.Controllers
             //Temporary
             if (overridePasswordDataPath != null)
             {
-                this.applicationConfigModel = new ApplicationConfigModel
+                this.applicationConfigModel = new AppConfigModel
                 {
-                    PasswordDataPath =string.Format("{0}{1}", overridePasswordDataPath, "/SpeedyPass.dat"),
+                    DataPath =string.Format("{0}{1}", overridePasswordDataPath, "/SpeedyPass.dat"),
                 };
 
                 this.persistantModelStorageService.Save(MainWindowController.APP_DYN_CONFIG_PATH, this.applicationConfigModel);
@@ -44,7 +44,7 @@ namespace SpeedyPass.Controllers
             this.LoadDynamicApplicationConfig();
             this.LoadDynamicPasswordData();
 
-            this.fileChangeWatcherService.Watch(this.applicationConfigModel.PasswordDataPath);
+            this.fileChangeWatcherService.Watch(this.applicationConfigModel.DataPath);
             this.fileChangeWatcherService.OnFileChanged += this.FileChangeWatcherService_OnFileChanged;
 
             this.view.BindViewModel(this.viewModel);
@@ -58,13 +58,13 @@ namespace SpeedyPass.Controllers
 
         public void LoadDynamicApplicationConfig()
         {
-            this.applicationConfigModel = this.persistantModelStorageService.Load<ApplicationConfigModel>(MainWindowController.APP_DYN_CONFIG_PATH, PersistantModelStorageService.StorageTypes.Default);
+            this.applicationConfigModel = this.persistantModelStorageService.Load<AppConfigModel>(MainWindowController.APP_DYN_CONFIG_PATH, PersistantModelStorageService.StorageTypes.Default);
 
             if (this.applicationConfigModel == null)
             {
-                this.applicationConfigModel = new ApplicationConfigModel
+                this.applicationConfigModel = new AppConfigModel
                 {
-                    PasswordDataPath = MainWindowController.DEFAULT_PSWD_DATA_PATH,
+                    DataPath = MainWindowController.DEFAULT_PSWD_DATA_PATH,
                 };
 
                 this.persistantModelStorageService.Save(MainWindowController.APP_DYN_CONFIG_PATH, this.applicationConfigModel);
@@ -75,7 +75,7 @@ namespace SpeedyPass.Controllers
         {
             this.viewModel.PasswordDataModelList =
                 this.persistantModelStorageService.Load<List<PasswordDataModel>>(
-                    this.applicationConfigModel.PasswordDataPath,
+                    this.applicationConfigModel.DataPath,
                 PersistantModelStorageService.StorageTypes.Encoded);
 
             if (this.viewModel.PasswordDataModelList == null)
@@ -83,7 +83,7 @@ namespace SpeedyPass.Controllers
                 this.viewModel.PasswordDataModelList = new List<PasswordDataModel>();
 
                 this.persistantModelStorageService.Save(
-                    this.applicationConfigModel.PasswordDataPath,
+                    this.applicationConfigModel.DataPath,
                     this.viewModel.PasswordDataModelList,
                     PersistantModelStorageService.StorageTypes.Encoded);
             }
@@ -116,7 +116,7 @@ namespace SpeedyPass.Controllers
                 this.viewModel.PasswordDataModelList.Add(passwordDataModel);
 
                 this.persistantModelStorageService.Save(
-                    this.applicationConfigModel.PasswordDataPath,
+                    this.applicationConfigModel.DataPath,
                     this.viewModel.PasswordDataModelList,
                     PersistantModelStorageService.StorageTypes.Encoded);
 
@@ -132,7 +132,7 @@ namespace SpeedyPass.Controllers
                 this.viewModel.PasswordDataModelList.RemoveAll(s => s.Domain == domain);
 
                 this.persistantModelStorageService.Save(
-                    this.applicationConfigModel.PasswordDataPath,
+                    this.applicationConfigModel.DataPath,
                     this.viewModel.PasswordDataModelList,
                     PersistantModelStorageService.StorageTypes.Encoded);
 

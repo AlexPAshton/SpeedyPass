@@ -3,17 +3,17 @@ using System.Windows.Input;
 
 namespace SpeedyPass.Views
 {
-    public partial class SetupWindow : Window, ISetupView
+    public partial class SetupView : Window, ISetupView
     {
         private ISetupViewModel viewModel;
-        private ISetupWindowController controller;
+        private ISetupViewController controller;
 
-        public SetupWindow()
+        public SetupView()
         {
             this.InitializeComponent();
         }
 
-        public void BindController(ISetupWindowController controller) => this.controller = controller;
+        public void BindController(ISetupViewController controller) => this.controller = controller;
 
         public void BindViewModel(ref ISetupViewModel viewModel)
         {

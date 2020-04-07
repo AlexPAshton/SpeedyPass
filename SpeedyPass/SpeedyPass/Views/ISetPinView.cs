@@ -3,7 +3,7 @@ using SpeedyPass.ViewModels;
 
 namespace SpeedyPass.Views
 {
-    internal interface ISetPinView
+    public interface ISetPinView
     {
         void BindViewModel(ref ISetPinViewModel viewModel);
         void BindController(ISetPinViewController setPinViewController);

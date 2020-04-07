@@ -62,6 +62,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers\DoneViewController.cs" />
+    <Compile Include="Controllers\IDoneViewController.cs" />
     <Compile Include="Controllers\ISetPinViewController.cs" />
     <Compile Include="Controllers\ISettingsViewController.cs" />
     <Compile Include="Controllers\SetPinViewController.cs" />
@@ -77,6 +79,8 @@
     <Compile Include="Services\IAppConfigService.cs" />
     <Compile Include="Services\IDataEncryptionService.cs" />
     <Compile Include="Services\PersistantLoggingService.cs" />
+    <Compile Include="ViewModels\DoneViewModel.cs" />
+    <Compile Include="ViewModels\IDoneViewModel.cs" />
     <Compile Include="ViewModels\ISetPinViewModel.cs" />
     <Compile Include="ViewModels\ISettingsViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -89,6 +93,10 @@
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\ISetupViewModel.cs" />
     <Compile Include="Controllers\ISetupViewController.cs" />
+    <Compile Include="Views\DoneView.xaml.cs">
+      <DependentUpon>DoneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IDoneView.cs" />
     <Compile Include="Views\ISetPinView.cs" />
     <Compile Include="Views\ISettingsView.cs" />
     <Compile Include="Views\ISetupView.cs" />
@@ -104,6 +112,10 @@
     <Compile Include="Views\ViewAddPassword.xaml.cs">
       <DependentUpon>ViewAddPassword.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\DoneView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -150,6 +162,7 @@
     <Content Include="Data\keyicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="lock.png" />
     <Resource Include="keypad.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

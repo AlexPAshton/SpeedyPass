@@ -1,0 +1,6 @@
+D:\Business Files\GitRepository\SpeedyPass\SpeedyPass\CustomUnity\bin\Debug\CustomUnity.dll
+D:\Business Files\GitRepository\SpeedyPass\SpeedyPass\CustomUnity\bin\Debug\CustomUnity.pdb
+D:\Business Files\GitRepository\SpeedyPass\SpeedyPass\CustomUnity\obj\Debug\CustomUnity.csprojAssemblyReference.cache
+D:\Business Files\GitRepository\SpeedyPass\SpeedyPass\CustomUnity\obj\Debug\CustomUnity.csproj.CoreCompileInputs.cache
+D:\Business Files\GitRepository\SpeedyPass\SpeedyPass\CustomUnity\obj\Debug\CustomUnity.dll
+D:\Business Files\GitRepository\SpeedyPass\SpeedyPass\CustomUnity\obj\Debug\CustomUnity.pdb

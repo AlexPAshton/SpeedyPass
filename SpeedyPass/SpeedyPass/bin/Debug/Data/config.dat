@@ -4,5 +4,5 @@
   <DataPath>D:/SpeedyPassDat.dat</DataPath>
   <UseDirectInput>true</UseDirectInput>
   <UseClipboardInput>false</UseClipboardInput>
-  <UsePin>true</UsePin>
+  <UsePin>false</UsePin>
 </AppConfigModel>

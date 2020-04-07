@@ -52,6 +52,10 @@ namespace SpeedyPass.Controllers
             {
                 CustomUnityContainer.Resolve<ISetPinViewController>();
             }
+            else
+            {
+                CustomUnityContainer.Resolve<IDoneViewController>();
+            }
 
             this.view.Close();
         }

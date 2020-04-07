@@ -106,7 +106,7 @@ namespace SpeedyPass.Controllers
 
             this.appConfigService.AppConfigModel.Pin = encryptedEnteredPin;
 
-            //Not implemented main window
+            CustomUnityContainer.Resolve<IDoneViewController>();
 
             this.view.Close();
         }

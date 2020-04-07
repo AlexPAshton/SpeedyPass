@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Business Files\GitRepository\SpeedyPass\SpeedyPass\SpeedyPass\App.xaml
-5-1916751122
+61514468496
 2-373105773
-40457454850
+461270740770
 17-1062587949
-Views\MainWindow.xaml;Views\SetPinView.xaml;Views\SettingsView.xaml;Views\SetupView.xaml;Views\ViewAddPassword.xaml;
+Views\DoneView.xaml;Views\MainWindow.xaml;Views\SetPinView.xaml;Views\SettingsView.xaml;Views\SetupView.xaml;Views\ViewAddPassword.xaml;
 
-True
+False
 
